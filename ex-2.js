@@ -375,4 +375,11 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+const newBills = bills.reduce((acc, value) => {
+  console.log(value.member);
+  if (value.member !== null) {
+    return acc + value.total;
+  }
+  return acc;
+}, 0);
+console.log(newBills);

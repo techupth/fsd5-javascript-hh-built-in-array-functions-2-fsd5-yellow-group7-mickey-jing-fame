@@ -374,4 +374,22 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const filterBillMembers = bills.filter((object) => {
+  return object.member !== null;
+});
+console.log(filterBillMembers);
+const billMembers = filterBillMembers.map((object) => {
+  return object.member.name;
+});
+console.log(billMembers);
+let checkList = [];
+const totalMembers = billMembers.reduce((acc, value) => {
+  if (!checkList.includes(value)) {
+    checkList.push(value);
+    return acc + 1;
+  }
+  return acc;
+}, 0);
+console.log(checkList);
+console.log(checkList.length);
+console.log(totalMembers);
