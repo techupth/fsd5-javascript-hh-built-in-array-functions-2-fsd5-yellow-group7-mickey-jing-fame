@@ -375,4 +375,10 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+const newBills = bills.filter(function (array) {
+  if (array.member !== null) {
+    return array;
+  }
+});
+
+console.log(newBills);

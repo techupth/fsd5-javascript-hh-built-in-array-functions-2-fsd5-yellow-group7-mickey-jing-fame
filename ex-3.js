@@ -374,4 +374,13 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+let notNullName = [];
+let pushName = bills.map(function (array) {
+  if (array.member !== null) {
+    return notNullName.push(array.member.name);
+  }
+});
+
+const billMembers = notNullName;
+
+console.log(billMembers);

@@ -374,4 +374,44 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+// Solution 1
+
+// let notNullName = [];
+// let pushName = bills.filter(function (array) {
+//   if (array.member !== null) {
+//     return notNullName.push(array.member.name);
+//   }
+// });
+
+// let notSameName = [];
+// const totalMembers = notNullName.map(function (array, index) {
+//   if (notNullName.indexOf(array) === index) {
+//     return notSameName.push(array);
+//   }
+// });
+
+// const result = "Unique Members Count: " + notSameName.length;
+
+// console.log(result);
+
+// Solution 2
+
+let notNullName = [];
+let pushName = bills.filter(function (array) {
+  if (array.member !== null) {
+    return notNullName.push(array.member.name);
+  }
+});
+
+let checkSameName = function (accumulator, current) {
+  if (!accumulator.includes(current)) {
+    accumulator.push(current);
+  }
+  return accumulator;
+};
+
+const totalMembers = notNullName.reduce(checkSameName, []);
+
+const result = "Unique Members Count: " + totalMembers.length;
+
+console.log(result);
