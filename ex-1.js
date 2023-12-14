@@ -374,3 +374,12 @@ const bills = [
 ];
 
 // Start coding here
+// let totals = (accumulator , currentValue)=>{
+// return accumulator + currentValue.total
+// }
+// const sum = bills.reduce(totals,0)
+let sum =bills.reduce((accumulator, currentValue)=>{
+  return accumulator+currentValue.total
+},0)
+
+console.log (sum)

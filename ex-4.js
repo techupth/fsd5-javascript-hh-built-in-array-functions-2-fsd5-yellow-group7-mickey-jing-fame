@@ -374,4 +374,16 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const newBills = bills.filter(function noNull(item){
+  return item.member !== null;
+})
+const billMembers = newBills.map(function onlyName(item){
+  return item.member.name
+});
+
+const totalMembers = billMembers.reduce(function(accumulator, currentValue){
+  if (!accumulator.includes(currentValue)){
+    accumulator.push(currentValue)}
+    return accumulator
+},[]).length
+console.log(totalMembers)

@@ -375,4 +375,12 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+// const newBills = bills.filter(noNull)
+// function noNull (item){
+//  return  item.member !== null
+// }
+const newBills = bills.filter(function noNull(item){
+  return item.member !== null;
+})
+
+console.log(newBills)
